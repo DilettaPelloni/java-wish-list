@@ -1,8 +1,5 @@
 package org.lessons.java.christmas;
 
-//IMPORT
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainCiclabile {
     public static void main(String[] args) {
@@ -16,8 +13,8 @@ public class MainCiclabile {
         //la stampo
         System.out.println(myCiclabile.toString());
 
-        //------------------ TESTO I METODI ------------------
 
+        //------------------ TESTO I METODI ------------------
         //stampo 5 volte il risultato del metodo
         for (int i = 0; i < 5; i++) {
             //uso un try catch perché ho previsto un'eccezione
@@ -30,5 +27,29 @@ public class MainCiclabile {
             System.out.println(myCiclabile.hasAncoraElementi());
         }
 
+
+        //------------------ BONUS ------------------
+        //istanzio Ciclabile con il costruttore senza parametri
+        Ciclabile myNewCiclabile = new Ciclabile();
+
+        //aggiungo elementi a myNewCiclabile
+        for (int i = 0; i < 5; i++) {
+            myNewCiclabile.addElemento(i+1);
+        }
+
+        //stampo myNewCiclabile
+        System.out.println(myNewCiclabile);
+
+        //testo i primi metodi anche qua
+        for (int i = 0; i < 5; i++) {
+            //uso un try catch perché ho previsto un'eccezione
+            try {
+                System.out.println(myNewCiclabile.getElementoSuccessivo());
+            } catch (RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+            //stampo il risultato di hasAncoraElementi()
+            System.out.println(myNewCiclabile.hasAncoraElementi());
+        }
     }
 }
